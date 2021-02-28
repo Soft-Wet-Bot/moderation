@@ -46,7 +46,7 @@ export default class MadeInHeaven extends BaseCommand {
       )
       .setTitle('MADE IN HEAVEN IS ABOUT TO START')
       .setDescription(
-        'Reply with __yes__ to start it!\nMade in heaven will delete all messages in this channel!'
+        'Reply with __yes__ to start it!\n__Made in heaven will **delete** all messages in this channel!__'
       )
       .setFooter('This is irreversible.')
       .setColor(this._m.config.colors.warn)

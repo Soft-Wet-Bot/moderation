@@ -14,12 +14,12 @@ export default class BitesTheDust extends BaseCommand {
       name: 'bites the dust',
       aliases: ['king crimson', 'killer queen', 'the hand', 'za hando'],
       description: 'Remove a given amount of messages in the current channel',
-      usage: 'bites the dust <#amount>',
+      usage: 'bites the dust <amount>',
       params: [
         {
           name: 'amount',
           description: 'The message count to remove',
-          type: 'number',
+          type: 'int',
           required: true
         }
       ],

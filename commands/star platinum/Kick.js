@@ -14,12 +14,12 @@ export default class Kick extends BaseCommand {
       name: 'star platinum kick',
       aliases: ['star finger'],
       description: 'Kick provided user',
-      usage: 'star platinum kick <@ mention> [reason]',
+      usage: 'star platinum kick <mention> [reason]',
       params: [
         {
           name: 'mention',
           description: 'The user you want to kick.',
-          type: 'mention',
+          type: 'string',
           required: true
         },
         {
@@ -27,7 +27,7 @@ export default class Kick extends BaseCommand {
           description: 'The reason you issued this kick.',
           type: 'string',
           default: null,
-          allow_sentence: true
+          is_sentence: true
         }
       ],
       permissions: {
@@ -85,7 +85,7 @@ export default class Kick extends BaseCommand {
       return true
     }
 
-    const reason = this.args.length > 1 ? this.args.slice(1) : false
+    const reason = this.args.length > 1 ? this.args[1].join(" ") : false
 
     try {
       await mention.kick(

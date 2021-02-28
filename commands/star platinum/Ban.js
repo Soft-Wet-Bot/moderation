@@ -14,12 +14,12 @@ export default class Ban extends BaseCommand {
       name: 'star platinum ban',
       aliases: ['punch'],
       description: 'Ban provided user',
-      usage: 'star platinum ban <@ mention> [reason]',
+      usage: 'star platinum ban <mention> [reason]',
       params: [
         {
           name: 'mention',
           description: 'The user you want to ban.',
-          type: 'mention',
+          type: 'string',
           required: true
         },
         {
@@ -27,7 +27,7 @@ export default class Ban extends BaseCommand {
           description: 'The reason you issued this ban.',
           type: 'string',
           default: null,
-          allow_sentence: true
+          is_sentence: true
         }
       ],
       permissions: {
@@ -85,7 +85,7 @@ export default class Ban extends BaseCommand {
       return true
     }
 
-    const reason = this.args.length > 1 ? this.args.slice(1) : false
+    const reason = this.args.length > 1 ? this.args[1].join(" ") : false
 
     try {
       await mention.ban({

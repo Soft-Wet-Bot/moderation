@@ -15,12 +15,12 @@ export default class ZaWarudo extends BaseCommand {
       aliases: ['the world'],
       description:
         'Enables slow mode for the current channel, use "za warudo reset" to reset the effects of this command.',
-      usage: 'za warudo <# seconds>',
+      usage: 'za warudo <seconds>',
       params: [
         {
           name: 'seconds',
           description: 'The amount of seconds for slow mode, 0 to reset.',
-          type: 'number',
+          type: 'int',
           required: true
         }
       ],

@@ -27,7 +27,7 @@ export default class Unban extends BaseCommand {
           description: 'The reason you issued this unban.',
           type: 'string',
           default: null,
-          allow_sentence: true
+          is_sentence: true
         }
       ],
       permissions: {
@@ -68,7 +68,7 @@ export default class Unban extends BaseCommand {
 
     errorEmbed.setTitle("Couldn't unban " + mention.toString())
 
-    const reason = this.args.length > 1 ? this.args.slice(1) : false
+    const reason = this.args.length > 1 ? this.args[1].join(" ") : false
 
     try {
       await this.msgObj.guild.members.unban(
